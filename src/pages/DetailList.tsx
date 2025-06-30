@@ -14,7 +14,7 @@ export default function DetailList() {
   }, [id, fetchUserId]);
 
   return (
-    <div>
+    <div className=" text-white">
       <h1 className=" my-10 text-4xl font-bold text-center">Detalles</h1>
 
       <DetailCard />

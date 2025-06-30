@@ -8,14 +8,14 @@ export default function DetailCard() {
   const user = useUserStore((state) => state.user);
 
   return (
-    <div className=' max-w-md mx-auto '>
+    <div className=' max-w-md mx-auto'>
 
       {!user ? (
         <div className=' h-96 flex justify-center items-center'>
           <Spinner />
         </div>
       ) : (
-        <div className=' bg-white shadow-xl rounded-2xl p-8 mt-8'>
+        <div className=' bg-gray-700 shadow-xl rounded-lg p-8 mt-8'>
           <div className='flex items-center space-x-4 mb-6'>
             <img
               src={user?.picture.large}
@@ -23,14 +23,14 @@ export default function DetailCard() {
               className='w-24 h-24 rounded-full object-cover border-4 border-blue-500'
             />
             <div>
-              <h2 className='text-2xl font-bold text-gray-800'>
+              <h2 className='text-2xl font-bold'>
                 {user?.name.first} {user?.name.last}
               </h2>
-              <p className='text-gray-500'>Edad: {user?.dob.age} años</p>
+              <p>Edad: {user?.dob.age} años</p>
             </div>
           </div>
 
-          <div className='space-y-2 text-gray-700 text-base'>
+          <div className='space-y-2 text-base'>
             <p>
               <span className='font-bold'>Celular:</span> {user?.cell}
             </p>
@@ -51,7 +51,7 @@ export default function DetailCard() {
 
           <button
             onClick={() => navigate(-1)}
-            className='w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md mt-5 cursor-pointer text-center transition duration-200'
+            className='w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-sm mt-5 cursor-pointer text-center transition duration-200'
           >
             Volver
           </button>
