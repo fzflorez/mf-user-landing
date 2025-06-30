@@ -55,7 +55,7 @@ export default function ListUser() {
             </p>
           </div>
         ) : hasUser ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
             {filteredUsers.map((user) => (
               <Link
                 to={`/details/${user.login.uuid}`}
