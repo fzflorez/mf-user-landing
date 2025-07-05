@@ -7,9 +7,11 @@ export default function ListUser() {
   const users = useUserStore((state) => state.users);
   const fetchUsers = useUserStore((state) => state.fetchUsers);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchUsers();
+    setLoading(true);
+    fetchUsers().finally(() => setLoading(false));
   }, [fetchUsers]);
 
   const filteredUsers = users.filter(
@@ -23,12 +25,6 @@ export default function ListUser() {
   );
 
   const hasUser = useMemo(() => filteredUsers.length, [filteredUsers]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    fetchUsers().finally(() => setLoading(false));
-  }, [fetchUsers]);
 
   return (
     <div className=" mx-4">
@@ -83,3 +79,4 @@ export default function ListUser() {
     </div>
   );
 }
+
