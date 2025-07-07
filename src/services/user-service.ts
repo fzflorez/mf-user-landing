@@ -9,8 +9,10 @@ export async function getUserApi() {
     if(result.success) {
       return result.data
     }
+    return []
   } catch (error) {
     console.log(error)
+    return []
   }
 }
 

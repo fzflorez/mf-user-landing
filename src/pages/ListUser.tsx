@@ -12,7 +12,7 @@ export default function ListUser() {
   useEffect(() => {
     setLoading(true);
     fetchUsers().finally(() => setLoading(false));
-  }, [fetchUsers]);
+  }, []);
 
   const filteredUsers = users.filter(
     (user) =>

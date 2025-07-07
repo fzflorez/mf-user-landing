@@ -17,12 +17,12 @@ export const useUserStore = create<UserStore>()(
     user: null,
     fetchUsers: async () => {
       const users = await getUserApi()
-      set({ users })
+      set({ users: users ?? [] })
     },
     fetchUserId: async (id: string) => {
       set({ user: null })
       const user = await getUserById(id)
-      set({ user })
+      set({ user: user ?? null })
     }
   }))
 )
